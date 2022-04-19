@@ -8,10 +8,12 @@
 		{% include "components/pageHeader.njk" %}
 
 		<main>
-			{{ layoutContent | safe }}
-			{% if hasCollection and collectionName %}
-				{% include "components/collectionList.njk" %}
-			{% endif %}
+			<section>
+				{{ layoutContent | safe }}
+				{% if hasCollection and collectionName %}
+					{% include "components/collectionList.njk" %}
+				{% endif %}
+			</section>
 		</main>
 		
 		{% include "components/pageFooter.njk" %}

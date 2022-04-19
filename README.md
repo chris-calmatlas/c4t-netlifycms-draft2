@@ -5,12 +5,12 @@ Using NetlifyCMS to build a mostly static site, with easy to access content for 
 
 ## Todo
 - [ ] CMS
-    - [ ] Create Get Involved, Projects, Code of Conduct, About pages
+    - [x] Create Get Involved, Projects, Code of Conduct, About pages
     - [ ] Create Projects page
     - [ ] Create Project posts
 
 - [ ] Top of the fold
-    - [ ] Navbar
+    - [x] Navbar
     - [ ] Three part display with background
     - [ ] Social Bar - Is this a footer?
 
