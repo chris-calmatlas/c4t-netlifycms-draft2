@@ -5,18 +5,20 @@
 
 	<body>
 
-		{% include "components/pageHeader.njk" %}
+		<header>
+			{% include "components/mainNav.njk" %}
+			<div>
+				<h1>We're looking for experts, learners, and problem solvers to join our project teams</h1>
+			</div>
+		</header>
 
 		<main>
 			<section>
 				{{ layoutContent | safe }}
-				{% if hasCollection and collectionName %}
-					{% include "components/collectionList.njk" %}
-				{% endif %}
 			</section>
 		</main>
 		
-		{% include "components/pageFooter.njk" %}
+		{% include "components/mainFooter.njk" %}
 
 	</body>
 

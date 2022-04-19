@@ -17,10 +17,14 @@
   --light-font: rgb(255, 255, 255);
 }
 
-body {
+html{
   font-size: 16px;
-  min-width: 20rem;
+}
+
+body {
+  min-width: 15rem;
   max-width: 100rem;
+  margin: 0 auto;
 }
 
 body > header {
@@ -30,9 +34,15 @@ body > header {
 
 main{
   max-width: 100%;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+main > section{
+  margin: 1rem 5%;
 }
 
 a,
@@ -53,25 +63,33 @@ a[href]:visited {
   align-items: center;
   justify-content: space-between;
   color: var(--font);
-  height: 5em;
-  padding-right: 1em;
+  height: 7rem;
+  padding-right: 1rem;
 }
 
 .mainNav .logo{
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 7rem;  
+}
+
+.mainNav .logo a{
+  color: var(--font);
+  text-decoration: none;
 }
 
 .mainNav .logo img{
   background-color: rgb(0, 0, 0);
-  padding: .5em;
+  padding: 1.7rem 2.2rem;
+  height: 7rem;
+  min-width: 14rem;
 }
 
 .mainNav .logo span {
-  margin: .5em;
+  margin: .5rem;
   white-space: nowrap;
-  font-size: 1.7em;
+  font-size: 2rem;
   font-weight: 800;
 }
 
@@ -100,9 +118,7 @@ a[href]:visited {
   display: none;
 }
 
-
-
-@media only screen and (max-width: 52rem) {
+@media only screen and (max-width: 65rem) {
   /****************************************
   * Components
   ****************************************/
@@ -121,7 +137,7 @@ a[href]:visited {
   .navItems {
     position: absolute;
     top: 0;
-    margin-top: 50px;
+    margin-top: 7rem;
     left: 0;
     flex-direction: column;
     width: 100%;
@@ -171,8 +187,8 @@ a[href]:visited {
   }
   
   #menuToggle:checked~.navItems li {
-    height: 2.5em;
-    padding: 0.5em;
+    height: 2rem;
+    padding: 0.5rem;
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
   }
   
@@ -180,14 +196,18 @@ a[href]:visited {
     display: flex;
     justify-content: center;
     margin: 0;
-    padding: 0.5em 0;
+    padding: 0.5rem 0;
     width: 100%;
     color: var(--font);
   }
 }
 
-@media only screen and (max-width: 30px) {
+@media only screen and (max-width: 33rem) {
   .mainNav .logo img{
     display: none;
+  }
+
+  .mainNav .logo span{
+    font-size: 2rem;
   }
 }

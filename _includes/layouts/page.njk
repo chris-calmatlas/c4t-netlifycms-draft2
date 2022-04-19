@@ -5,3 +5,6 @@ section: page
 <h1>{{ title }}</h1>
 
 {{ layoutContent | safe }}
+{% if hasCollection and collectionName %}
+    {% include "components/collectionList.njk" %}
+{% endif %}

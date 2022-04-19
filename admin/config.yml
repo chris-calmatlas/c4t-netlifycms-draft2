@@ -10,18 +10,18 @@ local_backend: true
 media_folder: "static/img" # Media files will be stored in the repo under images/uploads
 
 collections:
-  # Our blog posts
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Post" # Used in the UI
-    folder: "posts" # The path to the folder where the documents are stored
+  - name: "projects" # Used in routes, e.g., /admin/collections/blog
+    label: "Project" # Used in the UI
+    folder: "projects" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
+      - { label: "Past Project", name: "isPastProject", widget: "boolean", default: false }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Author", name: "author", widget: "string", default: "Anonymous" }
+      - { label: "Preview Image", name: "image", widget: "image"}
+      - { label: "Preview Image Alt Text", name: "imgAlt", widget: "string"}
       - { label: "Summary", name: "summary", widget: "text" }
-      - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
+      - { label: "Tags", name: "tags", widget: "list", default: ["project"] }
       - { label: "Body", name: "body", widget: "markdown" }
   # Our pages e.g. About
   - name: "pages"
@@ -31,12 +31,15 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Permalink", name: "permalink", widget: "string" }
+      - { label: "Permalink", name: "permalink", widget: "string", default: "/{title}/index.html" }
+      - { label: "Header Text", name: "headerText", widget: "string", default: "{title}" }
       - label: "Navigation" # https://www.11ty.dev/docs/plugins/navigation/
         name: "eleventyNavigation"
         widget: "object"
         fields:
-          - { label: "Key", name: "key", widget: "string" }
+          - { label: "Key", name: "key", widget: "string", default: "{title}"}
           - { label: "Order", name: "order", widget: "number", default: 0 }
+        required: false
       - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Include Collection List?", name: "hasCollection", widget: "boolean", required: false }
+      - { label: "Tags to Include in collection", name: "collectionName", widget: "string", required: false }
