@@ -1,0 +1,25 @@
+<footer>
+  {% set footerElements = collections.footerElement %}
+  {% for element in footerElements %}
+    {{ layoutContent | safe }}
+    {% if element.data.order == 1 %}
+      {{ element.data.body }}
+    {% endif %}
+    {% if element.data.order == 2 %}
+      {{ element.data.body }}
+    {% endif %}
+    {% if element.data.order == 3 %}
+      {{ element.data.body }}
+    {% endif %}
+    {% if element.data.order == 4 %}
+      {{ element.data.body }}
+    {% endif %}
+    {% if element.data.order == 5 %}
+      {{ element.data.body }}
+    {% endif %}
+  {% endfor %}
+  <small>
+    This project is maintained by <a href="https://calmatlas.com/">Chris Jaime</a>.
+    Started with <a href="{{ pkg.repository.url }}">eleventy-netlify-boilerplate</a>.
+  </small>
+</footer>

@@ -60,7 +60,7 @@ section:nth-child(even){
 * Components
 ****************************************/
 
-/*main navbar*/
+/*main navbar - based on https://alvarotrigo.com/blog/hamburger-menu-css/ */
 .mainNav {
   display: flex;
   flex-direction: row;
@@ -88,82 +88,98 @@ section:nth-child(even){
 }
 
 .menuButtonContainer {
-  display: flex;
-  height: 100%;
-  width: 30px;
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: none;
 }
 
 #menuToggle {
   display: none;
 }
 
-.menuButton,
-.menuButton::before,
-.menuButton::after {
-  display: block;
-  background-color: var(--font);
-  position: absolute;
-  height: 4px;
-  width: 30px;
-  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
-}
 
-.menuButton::before {
-  content: '';
-  margin-top: -8px;
-}
 
-.menuButton::after {
-  content: '';
-  margin-top: 8px;
-}
+@media only screen and (max-width: 700px) {
+  /****************************************
+  * Components
+  ****************************************/
 
-#menuToggle:checked+.menuButtonContainer .menuButton::before {
-  margin-top: 0px;
-  transform: rotate(405deg);
-}
+  /*main navbar - based on https://alvarotrigo.com/blog/hamburger-menu-css/ */
+  .menuButtonContainer {
+    display: flex;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-#menuToggle:checked+.menuButtonContainer .menuButton::after {
-  margin-top: 0px;
-  transform: rotate(-405deg);
-}
+  .navItems {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
+  }
+  
+  .menuButton,
+  .menuButton::before,
+  .menuButton::after {
+    display: block;
+    background-color: var(--font);
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
 
-.navItems {
-  position: absolute;
-  top: 0;
-  margin-top: 50px;
-  left: 0;
-  flex-direction: column;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--background);
-}
+  .menuButton::before {
+    content: '';
+    margin-top: -8px;
+  }
 
-#menuToggle~.navItems li {
-  height: 0;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-  overflow: hidden;
-}
+  .menuButton::after {
+    content: '';
+    margin-top: 8px;
+  }
 
-#menuToggle:checked~.navItems li {
-  height: 2.5em;
-  padding: 0.5em;
-  transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-}
+  #menuToggle:checked+.menuButtonContainer .menuButton::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+  }
 
-.navItems>li {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 0.5em 0;
-  width: 100%;
-  color: var(--font);
+  #menuToggle:checked+.menuButtonContainer .menuButton::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+  }
+
+  #menuToggle~.navItems li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    overflow: hidden;
+  }
+  
+  #menuToggle:checked~.navItems li {
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .navItems>li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: var(--font);
+  }
+  
+
+
 }

@@ -4,13 +4,17 @@
 	{% include "components/head.njk" %}
 
 	<body>
-		{% include "components/header.njk" %}
+
+		{% include "components/pageHeader.njk" %}
 
 		<main>
 			{{ layoutContent | safe }}
+			{% if hasCollection and collectionName %}
+				{% include "components/collectionList.njk" %}
+			{% endif %}
 		</main>
-
-		{% include "components/footer.njk" %}
+		
+		{% include "components/pageFooter.njk" %}
 
 	</body>
 
