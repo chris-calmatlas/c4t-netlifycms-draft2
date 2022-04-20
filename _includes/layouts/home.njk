@@ -9,8 +9,13 @@
 			{% include "components/mainNav.njk" %}
 		</header>
 
-		<main>
-
+		<main class="homepage">
+			<header class="headingBox">
+				<h1>{{ headerText }}</h1>
+				<p>{{ layoutContent | safe }}</p>
+			</header>
+			<article></article>
+			<article></article>
 		</main>
 		
 		{% include "components/mainFooter.njk" %}

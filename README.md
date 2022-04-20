@@ -4,17 +4,20 @@
 Using NetlifyCMS to build a mostly static site, with easy to access content for later updating.
 
 ## Todo
-- [ ] CMS
+### CMS
     - [x] Create Get Involved, Projects, Code of Conduct, About pages
-    - [ ] Create Projects page
-    - [ ] Create Project posts
+    - [x] Create Projects page
+    - [x] Create Project posts
 
+### style
 - [ ] Top of the fold
     - [x] Navbar
-    - [ ] Three part display with background
+    - [ ] Beautify projects page
+    - [ ] Three part display with background on homepage
+    - [ ] Header text on a cool background
     - [ ] Social Bar - Is this a footer?
 
-- [ ] Responsive design
+### Responsive design
 
 ## Contribute
 [Visit us on Slack](codefortucson.slack.com)

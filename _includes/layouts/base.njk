@@ -5,11 +5,12 @@
 
 	<body>
 
-		<header>
+		<header class="headerBox">
 			{% include "components/mainNav.njk" %}
-			<div>
-				<h1>We're looking for experts, learners, and problem solvers to join our project teams</h1>
-			</div>
+			<header class="headingBox">
+				<h1>{{ headerText }}</h1>
+				<p>{{ summary }}</p>
+			</header>
 		</header>
 
 		<main>

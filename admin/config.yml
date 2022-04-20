@@ -18,11 +18,11 @@ collections:
     fields: # The fields for each document, usually in front matter
       - { label: "Past Project", name: "isPastProject", widget: "boolean", default: false }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Preview Image", name: "image", widget: "image"}
-      - { label: "Preview Image Alt Text", name: "imgAlt", widget: "string"}
-      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Preview Image", name: "image", widget: "image", required: false}
+      - { label: "Preview Image Alt Text", name: "imgAlt", widget: "string", required: false}
+      - { label: "Summary", name: "summary", widget: "text", required: false }
       - { label: "Tags", name: "tags", widget: "list", default: ["project"] }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
   # Our pages e.g. About
   - name: "pages"
     label: "Page"
@@ -33,13 +33,14 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Permalink", name: "permalink", widget: "string", default: "/{title}/index.html" }
       - { label: "Header Text", name: "headerText", widget: "string", default: "{title}" }
+      - { label: "Summary", name: "summary", widget: "string", required: false}
       - label: "Navigation" # https://www.11ty.dev/docs/plugins/navigation/
         name: "eleventyNavigation"
         widget: "object"
         fields:
-          - { label: "Key", name: "key", widget: "string", default: "{title}"}
-          - { label: "Order", name: "order", widget: "number", default: 0 }
+          - { label: "Key", name: "key", widget: "string", default: "{title}", required: false}
+          - { label: "Order", name: "order", widget: "number", default: 0, required: false}
         required: false
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
       - { label: "Include Collection List?", name: "hasCollection", widget: "boolean", required: false }
       - { label: "Tags to Include in collection", name: "collectionName", widget: "string", required: false }
