@@ -13,9 +13,9 @@ Using NetlifyCMS to build a mostly static site, with easy to access content for 
 - [ ] Top of the fold
     - [x] Navbar
     - [ ] Beautify projects page
-    - [ ] Three part display with background on homepage
-    - [ ] Header text on a cool background
-    - [ ] Social Bar - Is this a footer?
+    - [x] Three part display with background on homepage
+    - [x] Header text on a cool background
+    - [x] Social Bar as a footer
 
 ### Responsive design
 

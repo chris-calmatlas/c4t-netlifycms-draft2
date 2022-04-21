@@ -4,13 +4,16 @@
 	{% include "components/head.njk" %}
 
 	<body>
-
-		<header class="headerBox">
+		<header class="mainHeader">
 			{% include "components/mainNav.njk" %}
-			<header class="headingBox">
+			{% if headerText %}
+			<div class="headingBox">
 				<h1>{{ headerText }}</h1>
+				{% if summary %}
 				<p>{{ summary }}</p>
-			</header>
+				{% endif %}
+			</div>
+			{% endif %}
 		</header>
 
 		<main>
