@@ -10,14 +10,11 @@ Using NetlifyCMS to build a mostly static site, with easy to access content for 
     - [x] Create Project posts
 
 ### style
-- [ ] Top of the fold
     - [x] Navbar
-    - [ ] Beautify projects page
+    - [x] Beautify projects page
     - [x] Three part display with background on homepage
     - [x] Header text on a cool background
     - [x] Social Bar as a footer
-
-### Responsive design
 
 ## Contribute
 [Visit us on Slack](codefortucson.slack.com)
